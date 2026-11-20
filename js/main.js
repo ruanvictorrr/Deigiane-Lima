@@ -1,6 +1,5 @@
-// Deigiane Lima · antes e depois, agendamento pelo WhatsApp e animações
+// Deigiane Lima · antes e depois e animações (agendar abre a agenda online do sistema)
 
-const WA = "5581992519055";
 
 /* ===== Antes e depois ===== */
 const BA = {
@@ -64,56 +63,7 @@ new IntersectionObserver((entradas, obs) => {
   setTimeout(() => requestAnimationFrame(anima), 400);
 }, { threshold: 0.6 }).observe(ba);
 
-/* ===== Agendamento ===== */
-const form = document.getElementById("book");
-const diasEl = document.getElementById("days");
-const SEMANA = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
-const SEMANA_LONGA = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
-
-// Próximos 12 dias, sem domingo
-(function montarDias() {
-  const hoje = new Date();
-  let n = 0;
-  for (let i = 0; n < 12; i++) {
-    const d = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate() + i);
-    if (d.getDay() === 0) continue;
-    const dd = String(d.getDate()).padStart(2, "0");
-    const mm = String(d.getMonth() + 1).padStart(2, "0");
-    const rotulo = i === 0 ? "hoje" : i === 1 ? "amanhã" : SEMANA[d.getDay()];
-    const valor = `${SEMANA_LONGA[d.getDay()]}, ${dd}/${mm}`;
-    diasEl.insertAdjacentHTML("beforeend",
-      `<label><input type="radio" name="dia" value="${valor}"${n === 0 ? " checked" : ""}><span><small>${rotulo}</small><b>${dd}</b></span></label>`);
-    n++;
-  }
-})();
-
-function atualizarMensagem() {
-  const dados = new FormData(form);
-  const nome = (dados.get("nome") || "").trim();
-  const servico = dados.get("servico");
-  const msg =
-    `Olá, Deigiane! ${nome ? `Sou ${nome} e v` : "V"}im pelo site.\n` +
-    (servico === "Avaliação"
-      ? `Queria uma avaliação do meu cabelo.\n`
-      : `Gostaria de agendar: ${servico}.\n`) +
-    `Dia: ${dados.get("dia")}, de ${dados.get("periodo")}.\n` +
-    `Tem horário disponível?`;
-  document.getElementById("preview").textContent = msg;
-  document.getElementById("bookBtn").href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
-}
-form.addEventListener("input", atualizarMensagem);
-form.addEventListener("change", atualizarMensagem);
-form.addEventListener("submit", (e) => e.preventDefault());
-atualizarMensagem();
-
-// "Agendar este serviço" nos cards: marca o serviço e rola até o formulário
-document.querySelectorAll("[data-servico]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const opcao = form.querySelector(`input[name="servico"][value="${btn.dataset.servico}"]`);
-    if (opcao) { opcao.checked = true; atualizarMensagem(); }
-    document.getElementById("agendar").scrollIntoView({ behavior: "smooth" });
-  });
-});
+/* Agendamento: os botões levam para a agenda online do sistema (horários livres de verdade). */
 
 /* ===== Entrada suave ===== */
 const io = new IntersectionObserver((entradas) => {

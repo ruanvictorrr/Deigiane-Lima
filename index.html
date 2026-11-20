@@ -29,7 +29,7 @@
         <li><a href="#local">Onde estamos</a></li>
       </ul>
     </nav>
-    <a class="btn btn-gold btn-sm" href="#agendar">Agendar</a>
+    <a class="btn btn-gold btn-sm" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar</a>
   </div>
 </header>
 
@@ -42,7 +42,7 @@
         <h1>Loiros que <em>brilham</em>,<br>fios que <em>respiram</em>.</h1>
         <p class="lead">Mechas, loiro pérola, alinhamento e terapia capilar com diagnóstico de cada fio. Um salão pensado para você sair se sentindo outra, sem perder a saúde do cabelo.</p>
         <div class="hero-ctas">
-          <a class="btn btn-dark" href="#agendar">Agendar meu horário</a>
+          <a class="btn btn-dark" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar meu horário</a>
           <a class="btn btn-line" href="#antes-depois">Ver antes e depois</a>
         </div>
         <ul class="hero-proof">
@@ -85,7 +85,7 @@
           <div class="service-body">
             <h3>Mechas e iluminação</h3>
             <p>Retoque ou mechas do zero para um dourado sofisticado, cheio de brilho e com cara de natural.</p>
-            <button class="link-btn" data-servico="Mechas e iluminação">Agendar este serviço →</button>
+            <a class="link-btn" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar este serviço →</a>
           </div>
         </article>
         <article class="service reveal">
@@ -93,7 +93,7 @@
           <div class="service-body">
             <h3>Loiro pérola</h3>
             <p>O loiro frio que chama atenção por onde passa, feito com colorimetria e produtos que protegem a fibra.</p>
-            <button class="link-btn" data-servico="Loiro pérola">Agendar este serviço →</button>
+            <a class="link-btn" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar este serviço →</a>
           </div>
         </article>
         <article class="service reveal">
@@ -101,7 +101,7 @@
           <div class="service-body">
             <h3>Alinhamento capilar</h3>
             <p>Fios alinhados, com brilho e movimento. Menos volume e frizz, sem perder a leveza.</p>
-            <button class="link-btn" data-servico="Alinhamento capilar">Agendar este serviço →</button>
+            <a class="link-btn" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar este serviço →</a>
           </div>
         </article>
         <article class="service reveal">
@@ -109,7 +109,7 @@
           <div class="service-body">
             <h3>Terapia capilar</h3>
             <p>Cuida do couro cabeludo, estimula a circulação, controla a oleosidade e fortalece os fios de dentro para fora.</p>
-            <button class="link-btn" data-servico="Terapia capilar">Agendar este serviço →</button>
+            <a class="link-btn" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar este serviço →</a>
           </div>
         </article>
         <article class="service reveal">
@@ -117,7 +117,7 @@
           <div class="service-body">
             <h3>Cor para cacheadas</h3>
             <p>Quando a cor e os cachos se completam: loiro com definição e hidratação para os cachos continuarem saudáveis.</p>
-            <button class="link-btn" data-servico="Cor para cacheadas">Agendar este serviço →</button>
+            <a class="link-btn" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Agendar este serviço →</a>
           </div>
         </article>
         <article class="service service-note reveal">
@@ -218,42 +218,18 @@
       <div class="book-copy">
         <p class="kicker kicker-light">Agendamento</p>
         <h2>Reserve seu<br><em>momento</em>.</h2>
-        <p>Escolha o serviço, o dia e o período. A mensagem chega pronta no WhatsApp do salão e a gente confirma o horário com você.</p>
+        <p>Veja os horários livres de verdade e marque na hora, sem esperar resposta. Leva menos de um minuto.</p>
       </div>
 
-      <form class="book" id="book" novalidate>
-        <fieldset>
-          <legend>Qual serviço?</legend>
-          <div class="chips" id="chipsServico">
-            <label><input type="radio" name="servico" value="Mechas e iluminação" checked><span>Mechas</span></label>
-            <label><input type="radio" name="servico" value="Loiro pérola"><span>Loiro pérola</span></label>
-            <label><input type="radio" name="servico" value="Alinhamento capilar"><span>Alinhamento</span></label>
-            <label><input type="radio" name="servico" value="Terapia capilar"><span>Terapia capilar</span></label>
-            <label><input type="radio" name="servico" value="Cor para cacheadas"><span>Cor em cachos</span></label>
-            <label><input type="radio" name="servico" value="Avaliação"><span>Quero uma avaliação</span></label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Qual dia?</legend>
-          <div class="days" id="days"></div>
-        </fieldset>
-        <fieldset>
-          <legend>Melhor período</legend>
-          <div class="chips">
-            <label><input type="radio" name="periodo" value="manhã" checked><span>Manhã</span></label>
-            <label><input type="radio" name="periodo" value="tarde"><span>Tarde</span></label>
-          </div>
-        </fieldset>
-        <label class="field">
-          <span>Seu nome</span>
-          <input type="text" name="nome" id="nome" autocomplete="given-name" placeholder="Como podemos te chamar?">
-        </label>
-        <div class="book-preview">
-          <span>Mensagem que vai para o WhatsApp</span>
-          <p id="preview"></p>
-        </div>
-        <a class="btn btn-gold btn-block" id="bookBtn" href="#" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
-      </form>
+      <div class="book book-online">
+        <ol class="book-passos">
+          <li><b>1</b><span>Escolha o serviço</span></li>
+          <li><b>2</b><span>Escolha a profissional, ou “tanto faz”</span></li>
+          <li><b>3</b><span>Toque num horário livre e pronto</span></li>
+        </ol>
+        <a class="btn btn-gold btn-block" href="https://sistema-salao-0j56.netlify.app/deigiane" target="_blank" rel="noopener">Ver horários livres</a>
+        <a class="book-wa" href="https://wa.me/5581992519055?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20queria%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Prefere falar com a gente? Chame no WhatsApp</a>
+      </div>
     </div>
   </section>
 
