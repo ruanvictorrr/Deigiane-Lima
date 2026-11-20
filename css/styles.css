@@ -80,8 +80,13 @@ button { font: inherit; color: inherit; }
 }
 .logo-text { display: flex; flex-direction: column; line-height: 1; }
 .logo-text strong { font: 600 21px/1 var(--serif); letter-spacing: .01em; }
-.logo-text small { margin-top: 3px; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
+.logo-text small { margin-top: 3px; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; }
+@media (max-width: 420px) { .logo-text small { letter-spacing: .1em; font-size: 9px; } }
 .nav nav { display: none; }
+.nav-acoes { display: flex; align-items: center; gap: 10px; }
+.nav-ig { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); color: var(--ink-soft); transition: color .2s, border-color .2s; }
+.nav-ig:hover { color: var(--caramel-2); border-color: var(--caramel-2); }
+.nav-ig svg { width: 20px; height: 20px; }
 
 /* ===== Hero ===== */
 .hero { padding: 26px 0 50px; }
